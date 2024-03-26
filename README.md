@@ -1,7 +1,3 @@
-//# CLI
-//docker build -t nus-course-proj:dev .  
-//docker run -p 3000:3000 --name nus-course-proj:dev
-
 //To start the app follow below steps:
 1. start the docker in Windows
 2. in vs code go to the docker icon and right click on it5007_tutorial and select start
