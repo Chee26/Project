@@ -8,7 +8,7 @@ const profiles = [
   },
   {
     title: "ONG JING CHUAN",
-    desc: "Student ID",
+    desc: "E0524739",
   },
   {
     title: "Wang Lin",
