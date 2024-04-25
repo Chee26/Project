@@ -2,19 +2,19 @@
 
 // npm install eventregistry
 // Load the EventRegistry module
-const { EventRegistry, QueryArticlesIter, ArticleInfoFlags, ReturnInfo, RequestArticlesInfo, QueryItems } = require("eventregistry");
+import { EventRegistry, QueryArticlesIter, ArticleInfoFlags, ReturnInfo } from "eventregistry";
 
-const er = new EventRegistry({ apiKey: "YOUR_API_KEY" });
+const er = new EventRegistry({ apiKey: "bd7f70d4-012a-47a2-824b-d39978c32959" });
 
-// Function to search and print articles about a given concept
 async function searchArticles(concept) {
     try {
         const conceptUri = await er.getConceptUri(concept);
+        console.log("Concept URI:", conceptUri);  // Log the URI to ensure it's correct
         if (conceptUri) {
             const query = new QueryArticlesIter(er, {
                 conceptUri: conceptUri,
                 sortBy: "date",
-                maxItems: 12,  // Assuming you want to limit the results to fit into your card layout
+                maxItems: 12,
                 returnInfo: new ReturnInfo({
                     articleInfo: new ArticleInfoFlags({
                         title: true,
@@ -26,14 +26,23 @@ async function searchArticles(concept) {
             });
 
             const articles = [];
-            await query.execQuery((article) => {
-                articles.push({
-                    title: article.title,
-                    url: article.url,
-                    date: article.datetime || article.date,
-                    image: article.image
-                });
+            // Use a promise to handle async operation within execQuery
+            await new Promise((resolve, reject) => {
+                query.execQuery((article) => {
+                    if (article) {
+                        articles.push({
+                            title: article.title,
+                            url: article.url,
+                            date: article.datetime || article.date,
+                            image: article.image
+                        });
+                    } else {
+                        reject("No articles returned"); // Reject if no articles are found
+                    }
+                }, () => resolve()); // Resolve the promise once all articles are processed
             });
+
+            console.log("Articles collected:", articles.length);  // Log how many articles were collected
             return articles;
         } else {
             console.log("Concept not found for:", concept);
@@ -45,5 +54,4 @@ async function searchArticles(concept) {
     }
 }
 
-// Example usage
-module.exports = searchArticles; // Export the function for use in other files
+export default searchArticles; // Export the function for use in other files
