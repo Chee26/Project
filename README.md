@@ -14,12 +14,13 @@
 
 //Function introduce
 1. there are 3 pages "Business News", "Stocks Dashboard" , "Summary"
-2. Business News now only contains some gif image, to keep space for future news retrieve from API 
-3. Stocks Dashboard will show stock price trend and search for Stock by name. Now inside are all mock data
-and below there's button, click on it will predict next days stock price.
+2. Business News retrieves the title and images from NewsAPI search for "S&P 500" 
+3. Stocks Dashboard shows daily stock price and search for Stock by name, default is "AAPL". A button is available to predict next days stock price.
 4. Summary page is just briefly introduce this app and authors information.
 
 //Files inside
 1. Under group_project folder there's "index.html" links to main.jsx <script type="module" src="/src/main.jsx"></script>
 2. "main.jsx" link to "App.jsx", which link to the 3 pages Route
 3. inside the 3 pages, "index.jsx" contains all the codes. 
+   a. The News page has a newsapi.js that contains the function to call NewsAPI, and test.js for unit testing
+   b. The Stocks page has a stocksapi.js that contains the function to call AlphaVantage API, and test.js for unit testing
