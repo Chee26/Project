@@ -26,5 +26,5 @@
    b. The Stocks page has a stocksapi.js that contains the function to call AlphaVantage API, and test.js for unit testing
 
 // References
-[Alpha Vantage](https://www.alphavantage.co/documentation/)
-[News API](https://newsapi.ai/documentation?tab=searchArticles)
+1. [Alpha Vantage](https://www.alphavantage.co/documentation/)
+2. [News API](https://newsapi.ai/documentation?tab=searchArticles)
