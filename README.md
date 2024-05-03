@@ -24,3 +24,7 @@
 3. inside the 3 pages, "index.jsx" contains all the codes. 
    a. The News page has a newsapi.js that contains the function to call NewsAPI, and test.js for unit testing
    b. The Stocks page has a stocksapi.js that contains the function to call AlphaVantage API, and test.js for unit testing
+
+// References
+[Alpha Vantage](https://www.alphavantage.co/documentation/)
+[News API](https://newsapi.ai/documentation?tab=searchArticles)
