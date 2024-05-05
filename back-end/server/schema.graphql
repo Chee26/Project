@@ -1,0 +1,22 @@
+scalar GraphQLDate
+scalar JSON
+
+type Stock {
+  _id: ID!
+  id: Int!
+  equity: String!
+  searchDate: GraphQLDate!
+}
+
+input StockInputs {
+  equity: String!
+}
+
+type Query {
+  about: String!
+  stocksList: [Stock!]!
+}
+
+type Mutation {
+  stockAdd(stock: StockInputs!): JSON
+}
