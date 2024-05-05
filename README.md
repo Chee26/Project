@@ -4,8 +4,8 @@
 3. right click on it5007_tutorial and select Attach Shell
 4. in the Shell type "bash" then enter
 5. cd home
-6. cd group38_project
-7. under group38_project type in "nvm install 20"  (teacher gave us is Node.js version 10 which is old)
+6. cd course-project-team38
+7. under course-project-team38 type in "nvm install 20"  (teacher gave us is Node.js version 10 which is old)
 8. type "npm install eventregistry" for newsapi
 9. type "npm install axios" for requests
 10. then type in "nvm use 20"  to use version 20
